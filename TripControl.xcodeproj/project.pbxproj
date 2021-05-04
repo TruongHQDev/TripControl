@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		787535E683BD42FF5FB30FB4 /* Pods_TripControl_TripControlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EF9C1A2232541CE597D112 /* Pods_TripControl_TripControlUITests.framework */; };
 		9264A95BC580288D4DD6162B /* Pods_TripControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EECC24336EE665E0280AF3 /* Pods_TripControlTests.framework */; };
+		A3464BC5264130820066758F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BC4264130820066758F /* MainViewController.swift */; };
+		A3464BC7264137D00066758F /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BC6264137D00066758F /* TripDetailViewController.swift */; };
+		A3464BCA2641381C0066758F /* MainTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BC82641381C0066758F /* MainTripCell.swift */; };
+		A3464BCB2641381C0066758F /* MainTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3464BC92641381C0066758F /* MainTripCell.xib */; };
 		A35614C72640EC63002CE7DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614C62640EC63002CE7DD /* AppDelegate.swift */; };
 		A35614C92640EC63002CE7DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614C82640EC63002CE7DD /* SceneDelegate.swift */; };
 		A35614CB2640EC63002CE7DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614CA2640EC63002CE7DD /* ViewController.swift */; };
@@ -44,6 +48,10 @@
 		4C41D920C346A9E805F346D6 /* Pods-TripControl-TripControlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripControl-TripControlUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripControl-TripControlUITests/Pods-TripControl-TripControlUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		50EF9C1A2232541CE597D112 /* Pods_TripControl_TripControlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripControl_TripControlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC50527BD2B089A1C90131C /* Pods-TripControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripControlTests.debug.xcconfig"; path = "Target Support Files/Pods-TripControlTests/Pods-TripControlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3464BC4264130820066758F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A3464BC6264137D00066758F /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
+		A3464BC82641381C0066758F /* MainTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTripCell.swift; sourceTree = "<group>"; };
+		A3464BC92641381C0066758F /* MainTripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTripCell.xib; sourceTree = "<group>"; };
 		A35614C32640EC63002CE7DD /* TripControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35614C62640EC63002CE7DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35614C82640EC63002CE7DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +119,6 @@
 				6CC50527BD2B089A1C90131C /* Pods-TripControlTests.debug.xcconfig */,
 				F93211547FC72FC4868EA9A2 /* Pods-TripControlTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +154,10 @@
 				A35614CF2640EC69002CE7DD /* Assets.xcassets */,
 				A35614D12640EC69002CE7DD /* LaunchScreen.storyboard */,
 				A35614D42640EC69002CE7DD /* Info.plist */,
+				A3464BC4264130820066758F /* MainViewController.swift */,
+				A3464BC6264137D00066758F /* TripDetailViewController.swift */,
+				A3464BC82641381C0066758F /* MainTripCell.swift */,
+				A3464BC92641381C0066758F /* MainTripCell.xib */,
 			);
 			path = TripControl;
 			sourceTree = "<group>";
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A35614D32640EC69002CE7DD /* LaunchScreen.storyboard in Resources */,
+				A3464BCB2641381C0066758F /* MainTripCell.xib in Resources */,
 				A35614D02640EC69002CE7DD /* Assets.xcassets in Resources */,
 				A35614CE2640EC63002CE7DD /* Main.storyboard in Resources */,
 			);
@@ -371,9 +383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3464BC7264137D00066758F /* TripDetailViewController.swift in Sources */,
 				A35614CB2640EC63002CE7DD /* ViewController.swift in Sources */,
 				A35614C72640EC63002CE7DD /* AppDelegate.swift in Sources */,
+				A3464BCA2641381C0066758F /* MainTripCell.swift in Sources */,
 				A35614C92640EC63002CE7DD /* SceneDelegate.swift in Sources */,
+				A3464BC5264130820066758F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27FX526975;
 				INFOPLIST_FILE = TripControl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27FX526975;
 				INFOPLIST_FILE = TripControl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

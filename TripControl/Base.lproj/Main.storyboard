@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="viC-sY-V8d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guG-vB-56z">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,55 +23,148 @@
             </objects>
             <point key="canvasLocation" x="-1606" y="46"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="wye-gy-MWl">
+        <!--Main View Controller-->
+        <scene sceneID="Nas-VM-Cqy">
             <objects>
-                <tableViewController id="RPI-r8-Ec3" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o8x-f5-RbV">
+                <viewController storyboardIdentifier="MainViewController" id="6ap-w9-OEj" customClass="MainViewController" customModule="TripControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XpA-Dx-PP1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zPc-i6-anU">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zPc-i6-anU" id="6aD-A8-baC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RPI-r8-Ec3" id="9f2-gD-JOh"/>
-                            <outlet property="delegate" destination="RPI-r8-Ec3" id="KGt-Ko-Dg8"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ELB-MG-ruu"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cLs-3o-ODR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83x-en-iT1">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="f7Y-O4-cRx">
+                                        <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f7Y-O4-cRx" id="2IE-kF-8zr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkJ-z5-4mb">
+                                <rect key="frame" x="295" y="587" width="50" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-pX-hRs">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <state key="normal" title="Add Trip"/>
+                                        <connections>
+                                            <action selector="addTripTapped:" destination="6ap-w9-OEj" eventType="touchUpInside" id="7HO-BR-Xjr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="JRk-xq-nJK"/>
+                                    <constraint firstItem="1Yg-pX-hRs" firstAttribute="top" secondItem="lkJ-z5-4mb" secondAttribute="top" id="Lr9-NP-SRs"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Yg-pX-hRs" secondAttribute="trailing" id="Sw4-eX-uTO"/>
+                                    <constraint firstItem="1Yg-pX-hRs" firstAttribute="leading" secondItem="lkJ-z5-4mb" secondAttribute="leading" id="UV8-Mq-ji4"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Yg-pX-hRs" secondAttribute="bottom" id="We4-Cg-dnM"/>
+                                    <constraint firstAttribute="height" constant="50" id="l4I-St-DpG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ywx-yM-PY0"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="83x-en-iT1" firstAttribute="top" secondItem="ywx-yM-PY0" secondAttribute="top" id="Dc5-7M-bj3"/>
+                            <constraint firstItem="ywx-yM-PY0" firstAttribute="bottom" secondItem="lkJ-z5-4mb" secondAttribute="bottom" constant="30" id="Hvv-zL-1sO"/>
+                            <constraint firstItem="ywx-yM-PY0" firstAttribute="bottom" secondItem="83x-en-iT1" secondAttribute="bottom" id="IC4-HK-jsh"/>
+                            <constraint firstItem="83x-en-iT1" firstAttribute="leading" secondItem="ywx-yM-PY0" secondAttribute="leading" id="lnI-QJ-nUy"/>
+                            <constraint firstItem="ywx-yM-PY0" firstAttribute="trailing" secondItem="83x-en-iT1" secondAttribute="trailing" id="mDp-7K-z2J"/>
+                            <constraint firstItem="ywx-yM-PY0" firstAttribute="trailing" secondItem="lkJ-z5-4mb" secondAttribute="trailing" constant="30" id="rUX-Rb-dzL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TnP-mq-QDW"/>
+                    <connections>
+                        <outlet property="btnAddTrip" destination="1Yg-pX-hRs" id="96b-a5-epo"/>
+                        <outlet property="tableviewTrips" destination="83x-en-iT1" id="ISq-Ij-jMN"/>
+                        <outlet property="vwAddButton" destination="lkJ-z5-4mb" id="xoo-Sk-ahI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67h-mE-APt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="-4"/>
+            <point key="canvasLocation" x="508" y="-400.74962518740631"/>
+        </scene>
+        <!--Trip Detail View Controller-->
+        <scene sceneID="EdQ-zK-2nx">
+            <objects>
+                <viewController storyboardIdentifier="TripDetailViewController" id="9hL-0g-TIT" customClass="TripDetailViewController" customModule="TripControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJy-PX-FgP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CXS-Ve-5vp">
+                                <rect key="frame" x="122" y="41" width="131" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVJ-bF-DkM">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HO0-r5-gfM">
+                                        <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HO0-r5-gfM" id="3Y0-YB-HHb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Ks-Yt-Ydh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Ks-Yt-Ydh" firstAttribute="trailing" secondItem="RVJ-bF-DkM" secondAttribute="trailing" id="IrF-b3-ZYg"/>
+                            <constraint firstItem="RVJ-bF-DkM" firstAttribute="leading" secondItem="3Ks-Yt-Ydh" secondAttribute="leading" id="SKn-Wf-hMr"/>
+                            <constraint firstItem="RVJ-bF-DkM" firstAttribute="top" secondItem="3Ks-Yt-Ydh" secondAttribute="top" constant="100" id="ZEd-hn-dsh"/>
+                            <constraint firstItem="3Ks-Yt-Ydh" firstAttribute="bottom" secondItem="RVJ-bF-DkM" secondAttribute="bottom" id="qCZ-Wl-49Q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odg-aC-oRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508" y="346"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="u91-9T-Hon">
+        <scene sceneID="12e-o3-HL8">
             <objects>
-                <navigationController id="viC-sY-V8d" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="smn-nf-Jlg">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="guG-vB-56z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wxw-3B-wLM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RPI-r8-Ec3" kind="relationship" relationship="rootViewController" id="Q5Z-Jq-1jW"/>
+                        <segue destination="6ap-w9-OEj" kind="relationship" relationship="rootViewController" id="2Lq-71-yhl"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cz0-JA-dgS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vK7-RD-OgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-818" y="-4"/>
+            <point key="canvasLocation" x="-431.19999999999999" y="-400.74962518740631"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
