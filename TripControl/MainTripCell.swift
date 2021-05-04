@@ -8,16 +8,16 @@
 import UIKit
 
 class MainTripCell: UITableViewCell {
-
+    @IBOutlet weak var titleTrip: UILabel!
+    @IBOutlet weak var timeTrip: UILabel!
+    @IBOutlet weak var payedTrip: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
