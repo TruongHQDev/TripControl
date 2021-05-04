@@ -9,21 +9,32 @@ import UIKit
 
 class TripDetailViewController: UIViewController {
 
+    @IBOutlet weak var tableviewDestination: UITableView!
+    
+    var destinations: [String] = ["a", "b"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "DestinationCell", bundle: nil)
+        tableviewDestination.register(nib, forCellReuseIdentifier: "DestinationCell")
+        tableviewDestination.delegate = self
+        tableviewDestination.dataSource = self
+        
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension TripDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return destinations.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationCell", for: indexPath) as! DestinationCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 }

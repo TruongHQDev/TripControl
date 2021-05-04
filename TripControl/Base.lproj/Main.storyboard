@@ -53,6 +53,7 @@
                                         <state key="normal" title="Add Trip"/>
                                         <connections>
                                             <action selector="addTripTapped:" destination="6ap-w9-OEj" eventType="touchUpInside" id="7HO-BR-Xjr"/>
+                                            <segue destination="9hL-0g-TIT" kind="push" id="ukK-0o-2B7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -106,7 +107,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVJ-bF-DkM">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HO0-r5-gfM">
@@ -129,6 +130,10 @@
                             <constraint firstItem="3Ks-Yt-Ydh" firstAttribute="bottom" secondItem="RVJ-bF-DkM" secondAttribute="bottom" id="qCZ-Wl-49Q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="05g-Kj-CzB"/>
+                    <connections>
+                        <outlet property="tableviewDestination" destination="RVJ-bF-DkM" id="X2E-v6-7Ri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odg-aC-oRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

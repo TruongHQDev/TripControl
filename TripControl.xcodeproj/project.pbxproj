@@ -13,6 +13,8 @@
 		A3464BC7264137D00066758F /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BC6264137D00066758F /* TripDetailViewController.swift */; };
 		A3464BCA2641381C0066758F /* MainTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BC82641381C0066758F /* MainTripCell.swift */; };
 		A3464BCB2641381C0066758F /* MainTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3464BC92641381C0066758F /* MainTripCell.xib */; };
+		A3464BCE264143C40066758F /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BCC264143C40066758F /* DestinationCell.swift */; };
+		A3464BCF264143C40066758F /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3464BCD264143C40066758F /* DestinationCell.xib */; };
 		A35614C72640EC63002CE7DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614C62640EC63002CE7DD /* AppDelegate.swift */; };
 		A35614C92640EC63002CE7DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614C82640EC63002CE7DD /* SceneDelegate.swift */; };
 		A35614CB2640EC63002CE7DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614CA2640EC63002CE7DD /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		A3464BC6264137D00066758F /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		A3464BC82641381C0066758F /* MainTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTripCell.swift; sourceTree = "<group>"; };
 		A3464BC92641381C0066758F /* MainTripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTripCell.xib; sourceTree = "<group>"; };
+		A3464BCC264143C40066758F /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
+		A3464BCD264143C40066758F /* DestinationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
 		A35614C32640EC63002CE7DD /* TripControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35614C62640EC63002CE7DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35614C82640EC63002CE7DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				A3464BC6264137D00066758F /* TripDetailViewController.swift */,
 				A3464BC82641381C0066758F /* MainTripCell.swift */,
 				A3464BC92641381C0066758F /* MainTripCell.xib */,
+				A3464BCC264143C40066758F /* DestinationCell.swift */,
+				A3464BCD264143C40066758F /* DestinationCell.xib */,
 			);
 			path = TripControl;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				A3464BCB2641381C0066758F /* MainTripCell.xib in Resources */,
 				A35614D02640EC69002CE7DD /* Assets.xcassets in Resources */,
 				A35614CE2640EC63002CE7DD /* Main.storyboard in Resources */,
+				A3464BCF264143C40066758F /* DestinationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,7 @@
 				A3464BC7264137D00066758F /* TripDetailViewController.swift in Sources */,
 				A35614CB2640EC63002CE7DD /* ViewController.swift in Sources */,
 				A35614C72640EC63002CE7DD /* AppDelegate.swift in Sources */,
+				A3464BCE264143C40066758F /* DestinationCell.swift in Sources */,
 				A3464BCA2641381C0066758F /* MainTripCell.swift in Sources */,
 				A35614C92640EC63002CE7DD /* SceneDelegate.swift in Sources */,
 				A3464BC5264130820066758F /* MainViewController.swift in Sources */,
