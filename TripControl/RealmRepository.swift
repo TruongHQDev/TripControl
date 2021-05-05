@@ -17,7 +17,7 @@ class RealmService {
     var currentSchema: UInt64 = 1
     var currentConfiguration: Realm.Configuration? = nil
     
-    lazy var realm = try! Realm(configuration: currentConfiguration ?? Realm.Configuration())
+    var realm = try! Realm()
     
     func create<T: Object>(_ object: T) {
         do {

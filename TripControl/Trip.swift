@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 class Trip: Object {
+    @objc dynamic var ID = -1
     @objc dynamic var title:        String = ""
     @objc dynamic var startDate:    String = ""
     @objc dynamic var endDate:      String = ""
@@ -20,16 +21,17 @@ class Trip: Object {
         return true
     }
     
-    convenience init(title: String?, startDate: String?, endDate: String?, total: Double?, payed: Double?) {
+    convenience init(title: String?, startDate: String?, endDate: String?, people: Int?, total: Double?, payed: Double?) {
         self.init()
         self.title = title ?? ""
         self.startDate = startDate ?? ""
         self.endDate = endDate ?? ""
+        self.people.value = people ?? 0
         self.total = total ?? 0.0
         self.payed.value = payed ?? 0.0
     }
     
-    
+
     func payedString() -> String? {
         guard let payed = payed.value else { return nil}
         return String(payed)

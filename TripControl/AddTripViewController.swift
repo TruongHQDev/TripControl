@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class AddTripViewController: UIViewController {
 
@@ -22,9 +24,13 @@ class AddTripViewController: UIViewController {
     
     @IBOutlet weak var btnSave: UIButton!
     
+    var tripName = ""
+    var startDate = ""
+    var endDate = ""
+    var people:Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     
@@ -36,10 +42,19 @@ class AddTripViewController: UIViewController {
     }
     
     func createTrip() {
-        let title = txtTripName.text
-        let startDate = pkStartDate.date
-//        let trip = Trip(title: <#T##String?#>, startDate: <#T##String?#>, endDate: <#T##String?#>, total: <#T##Double?#>, payed: <#T##Double?#>)
-        print("")
+        tripName = txtTripName.text ?? ""
+        if let p = txtPeople.text as? Int? {
+            people = p ?? 1
+        } else {
+            people = 1
+        }
+        
+        let trip = Trip(title: tripName, startDate: startDate, endDate: endDate, people: people, total: 0, payed: 0)
+        let realm = RealmService.shared.realm
+        let count = realm.objects(Trip.self).count
+        trip.ID = count + 1
+        RealmService.shared.create(trip)
+ 
     }
 
     @IBAction func valueChange(_ sender: Any) {
@@ -47,9 +62,16 @@ class AddTripViewController: UIViewController {
         dateFormat.dateStyle = DateFormatter.Style.short
         dateFormat.timeStyle = DateFormatter.Style.short
         
-        let strDate = dateFormat.string(from: pkStartDate.date)
-        print("date: \(strDate)")
+        startDate = dateFormat.string(from: pkStartDate.date)
         
     }
     
+    @IBAction func endDateChange(_ sender: Any) {
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = DateFormatter.Style.short
+        dateFormat.timeStyle = DateFormatter.Style.short
+        
+        endDate = dateFormat.string(from: pkEndDate.date)
+//        print("date: \(strDate)")
+    }
 }
