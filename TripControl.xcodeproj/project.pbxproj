@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		A3464BCB2641381C0066758F /* MainTripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3464BC92641381C0066758F /* MainTripCell.xib */; };
 		A3464BCE264143C40066758F /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BCC264143C40066758F /* DestinationCell.swift */; };
 		A3464BCF264143C40066758F /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3464BCD264143C40066758F /* DestinationCell.xib */; };
+		A3464BD12641560C0066758F /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BD02641560C0066758F /* RealmRepository.swift */; };
+		A3464BD32642464B0066758F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BD22642464B0066758F /* Trip.swift */; };
+		A3464BD5264277A40066758F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3464BD4264277A30066758F /* Destination.swift */; };
 		A35614C72640EC63002CE7DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614C62640EC63002CE7DD /* AppDelegate.swift */; };
 		A35614C92640EC63002CE7DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614C82640EC63002CE7DD /* SceneDelegate.swift */; };
 		A35614CB2640EC63002CE7DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35614CA2640EC63002CE7DD /* ViewController.swift */; };
@@ -56,6 +59,9 @@
 		A3464BC92641381C0066758F /* MainTripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTripCell.xib; sourceTree = "<group>"; };
 		A3464BCC264143C40066758F /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
 		A3464BCD264143C40066758F /* DestinationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
+		A3464BD02641560C0066758F /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		A3464BD22642464B0066758F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		A3464BD4264277A30066758F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		A35614C32640EC63002CE7DD /* TripControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35614C62640EC63002CE7DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35614C82640EC63002CE7DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 				A3464BC92641381C0066758F /* MainTripCell.xib */,
 				A3464BCC264143C40066758F /* DestinationCell.swift */,
 				A3464BCD264143C40066758F /* DestinationCell.xib */,
+				A3464BD02641560C0066758F /* RealmRepository.swift */,
+				A3464BD22642464B0066758F /* Trip.swift */,
+				A3464BD4264277A30066758F /* Destination.swift */,
 			);
 			path = TripControl;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 				A35614BF2640EC63002CE7DD /* Sources */,
 				A35614C02640EC63002CE7DD /* Frameworks */,
 				A35614C12640EC63002CE7DD /* Resources */,
+				3A2E3EE106E797926F3B858C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +244,7 @@
 				A35614E02640EC69002CE7DD /* Sources */,
 				A35614E12640EC69002CE7DD /* Frameworks */,
 				A35614E22640EC69002CE7DD /* Resources */,
+				75F480A39F6641605809AC01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,6 +372,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3A2E3EE106E797926F3B858C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripControl/Pods-TripControl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripControl/Pods-TripControl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TripControl/Pods-TripControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75F480A39F6641605809AC01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripControl-TripControlUITests/Pods-TripControl-TripControlUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripControl-TripControlUITests/Pods-TripControl-TripControlUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TripControl-TripControlUITests/Pods-TripControl-TripControlUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9D1DECE678829A8576EDC5DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,7 +436,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3464BC7264137D00066758F /* TripDetailViewController.swift in Sources */,
+				A3464BD12641560C0066758F /* RealmRepository.swift in Sources */,
+				A3464BD5264277A40066758F /* Destination.swift in Sources */,
 				A35614CB2640EC63002CE7DD /* ViewController.swift in Sources */,
+				A3464BD32642464B0066758F /* Trip.swift in Sources */,
 				A35614C72640EC63002CE7DD /* AppDelegate.swift in Sources */,
 				A3464BCE264143C40066758F /* DestinationCell.swift in Sources */,
 				A3464BCA2641381C0066758F /* MainTripCell.swift in Sources */,
