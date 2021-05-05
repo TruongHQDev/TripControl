@@ -23,7 +23,9 @@ class TripDetailViewController: UIViewController {
     }
     
     @IBAction func addDestinationTapped(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -42,5 +44,11 @@ extension TripDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
