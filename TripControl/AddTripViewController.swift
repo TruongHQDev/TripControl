@@ -29,7 +29,27 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
+        
+        createTrip()
+        
         navigationController?.popViewController(animated: true)
+    }
+    
+    func createTrip() {
+        let title = txtTripName.text
+        let startDate = pkStartDate.date
+//        let trip = Trip(title: <#T##String?#>, startDate: <#T##String?#>, endDate: <#T##String?#>, total: <#T##Double?#>, payed: <#T##Double?#>)
+        print("")
+    }
+
+    @IBAction func valueChange(_ sender: Any) {
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = DateFormatter.Style.short
+        dateFormat.timeStyle = DateFormatter.Style.short
+        
+        let strDate = dateFormat.string(from: pkStartDate.date)
+        print("date: \(strDate)")
+        
     }
     
 }

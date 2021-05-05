@@ -234,6 +234,7 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveTapped:" destination="03S-63-zAr" eventType="touchUpInside" id="Jck-kp-gMW"/>
+                                    <action selector="valueChange:" destination="03S-63-zAr" eventType="touchUpInside" id="nDg-dm-YOa"/>
                                 </connections>
                             </button>
                         </subviews>

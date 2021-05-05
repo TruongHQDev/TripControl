@@ -17,12 +17,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let realm = RealmService.shared.realm
         let nib = UINib(nibName: "MainTripCell", bundle: nil)
         tableviewTrips.register(nib, forCellReuseIdentifier: "MainTripCell")
         
         tableviewTrips.delegate = self
         tableviewTrips.dataSource = self
+        
+        print("URL: \(realm.configuration.fileURL)")
     }
     
     @IBAction func addTripTapped(_ sender: Any) {
