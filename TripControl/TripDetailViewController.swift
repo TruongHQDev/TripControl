@@ -10,6 +10,7 @@ import UIKit
 class TripDetailViewController: UIViewController {
 
     @IBOutlet weak var tableviewDestination: UITableView!
+    @IBOutlet weak var vwAddDestination: UIView!
     
     var destinations: [String] = ["a", "b"]
     override func viewDidLoad() {
@@ -20,6 +21,11 @@ class TripDetailViewController: UIViewController {
         tableviewDestination.dataSource = self
         
     }
+    
+    @IBAction func addDestinationTapped(_ sender: Any) {
+        
+    }
+    
     
 }
 
