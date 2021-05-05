@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var vwAddButton: UIView!
     @IBOutlet weak var btnAddTrip: UIButton!
     
-    var trips: [String] = ["1", "2"]
+    var trips: [Trip] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,30 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        fetchTrip()
+        
+    }
+    
+    func fetchTrip() {
+        trips.removeAll()
+        let realm = RealmService.shared.realm
+        
+        let realmTrips = realm.objects(Trip.self)
+        
+        for item in realmTrips {
+            let temp = Trip(title: item.title, startDate: item.startDate, endDate: item.endDate, people: item.people.value, total: item.total, payed: item.payed.value)
+            temp.ID = item.ID
+            trips.append(temp)
+        }
+        
+        DispatchQueue.main.async {
+            self.tableviewTrips.reloadData()
+        }
+    }
+    
+    
+    
 
 }
 
@@ -43,7 +67,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTripCell", for: indexPath) as! MainTripCell
-        
+        cell.idTrip = trips[indexPath.row].ID
+        cell.setTrip(trip: trips[indexPath.row])
         return cell
     }
     

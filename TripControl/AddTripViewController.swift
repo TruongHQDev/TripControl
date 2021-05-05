@@ -54,7 +54,6 @@ class AddTripViewController: UIViewController {
         let count = realm.objects(Trip.self).count
         trip.ID = count + 1
         RealmService.shared.create(trip)
- 
     }
 
     @IBAction func valueChange(_ sender: Any) {
