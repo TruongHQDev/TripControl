@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     
     @IBAction func addTripTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var vc = storyboard.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -80,6 +80,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TripDetailViewController") as! TripDetailViewController
+        vc.trip = trips[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

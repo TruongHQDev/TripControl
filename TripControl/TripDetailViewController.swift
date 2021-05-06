@@ -14,6 +14,7 @@ class TripDetailViewController: UIViewController {
     
     var destinations: [Destination] = []
     var tripID = -1
+    var trip: Trip?
     override func viewDidLoad() {
         hideKeyBoardWhenTappedAround()
         super.viewDidLoad()
@@ -27,8 +28,9 @@ class TripDetailViewController: UIViewController {
     @IBAction func addDestinationTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
-        let item = Destination(tripID: tripID, title: nil, date: nil, location: nil, payedPerson: nil, payed: nil)
-        vc.update(to: item)
+        let item = Destination(tripID: trip?.ID, title: nil, date: nil, location: nil, payedPerson: nil, payed: nil)
+        vc.set(to: item)
+        vc.isUpdated = false
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -45,6 +47,7 @@ class TripDetailViewController: UIViewController {
         for item in realmDes {
             let temp = Destination(tripID: item.tripID, title: item.title, date: item.date, location: item.location, payedPerson: item.payedPerson, payed: item.payed.value)
             temp.tripID = item.tripID
+            temp.destinationID = item.destinationID
             destinations.append(temp)
         }
         
@@ -73,7 +76,8 @@ extension TripDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
-        vc.update(to: destinations[indexPath.row])
+        vc.set(to: destinations[indexPath.row])
+        vc.isUpdated = true
         navigationController?.pushViewController(vc, animated: true)
     }
 }

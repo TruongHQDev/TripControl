@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class DestinationAddedViewController: UIViewController {
 
@@ -26,14 +28,18 @@ class DestinationAddedViewController: UIViewController {
     
     @IBOutlet weak var btnSave: UIButton!
     
+    var isUpdated: Bool = true
     var people: [String] = ["", "1", "2", "3"]
     
+    var destinationID = -1
     var tripID = -1
     var desName = ""
     var location = ""
     var date = ""
     var payed: Double = 0.0
     var personPayed = ""
+    
+    var des: Destination?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +49,13 @@ class DestinationAddedViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        createDestination()
+        if isUpdated {
+            //update
+            updateDestination()
+        } else {
+            createDestination()
+        }
+        
         
         navigationController?.popViewController(animated: true)
     }
@@ -70,16 +82,40 @@ class DestinationAddedViewController: UIViewController {
         personPayed = people[pkPersonPayed.selectedRow(inComponent: 0)]
         
         let des = Destination(tripID: tripID, title: desName, date: date, location: location, payedPerson: personPayed, payed: payed)
+        let realm = RealmService.shared.realm
+        let count = realm.objects(Destination.self).count
+        des.destinationID = count + 1
         RealmService.shared.create(des)
     }
     
-    func update(to destination: Destination) {
+    func set(to destination: Destination) {
+        des = destination
         tripID = destination.tripID
+        destinationID = destination.destinationID
         desName = "\(destination.title)"
         //date
         location = "\(destination.location)"
         payed = destination.payed.value ?? 0
         personPayed = destination.payedPerson
+    }
+    
+    func updateDestination () {
+        desName = txtDestinationName.text ?? ""
+        location = txtLocation.text ?? ""
+        let temp = txtPayed.text ?? "0"
+        payed = Double(temp) ?? 0
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = DateFormatter.Style.short
+        dateFormat.timeStyle = DateFormatter.Style.short
+        
+        date = dateFormat.string(from: pkDate.date)
+        personPayed = people[pkPersonPayed.selectedRow(inComponent: 0)]
+        
+//        let predicate = NSPredicate(format: "destinationID = %@ AND tripID = %@", destinationID, tripID)
+//        if let dat = RealmService.shared.realm.objects(Destination.self).filter(predicate).first {
+//            let updateData: [String: Any] = ["title": desName, "date": date, "location": location, "payedPerson": personPayed, "payed": payed]
+//            RealmService.shared.update(dat, with: updateData)
+//        }
     }
 
 }

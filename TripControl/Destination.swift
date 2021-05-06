@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 class Destination: Object {
+    @objc dynamic var destinationID: Int = -1
     @objc dynamic var tripID:        Int = -1
     @objc dynamic var title:        String = ""
     @objc dynamic var date:      String = ""

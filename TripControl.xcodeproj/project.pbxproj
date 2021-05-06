@@ -171,7 +171,7 @@
 				A35614D12640EC69002CE7DD /* LaunchScreen.storyboard */,
 				A35614D42640EC69002CE7DD /* Info.plist */,
 				A3464BC4264130820066758F /* MainViewController.swift */,
-				A3464BC6264137D00066758F /* TripDetailViewController.swift */,
+				A3464BD6264280090066758F /* AddTripViewController.swift */,
 				A3464BC82641381C0066758F /* MainTripCell.swift */,
 				A3464BC92641381C0066758F /* MainTripCell.xib */,
 				A3464BCC264143C40066758F /* DestinationCell.swift */,
@@ -179,7 +179,7 @@
 				A3464BD02641560C0066758F /* RealmRepository.swift */,
 				A3464BD22642464B0066758F /* Trip.swift */,
 				A3464BD4264277A30066758F /* Destination.swift */,
-				A3464BD6264280090066758F /* AddTripViewController.swift */,
+				A3464BC6264137D00066758F /* TripDetailViewController.swift */,
 				A3464BD826428A6E0066758F /* DestinationAddedViewController.swift */,
 				A3464BDA26439F400066758F /* Extensions.swift */,
 			);
