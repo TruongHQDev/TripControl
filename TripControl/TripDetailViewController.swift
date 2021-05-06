@@ -25,6 +25,7 @@ class TripDetailViewController: UIViewController {
     @IBAction func addDestinationTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
+        //trip id
         navigationController?.pushViewController(vc, animated: true)
     }
     

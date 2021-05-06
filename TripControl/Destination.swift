@@ -9,22 +9,25 @@ import Foundation
 import RealmSwift
 
 class Destination: Object {
+    @objc dynamic var tripID:        Int = -1
     @objc dynamic var title:        String = ""
     @objc dynamic var date:      String = ""
-    @objc dynamic var total:        Double = 0.0
+//    @objc dynamic var total:        Double = 0.0
     @objc dynamic var location: String = ""
+    @objc dynamic var payedPerson: String = ""
     var payed = RealmOptional<Double>()
     
     func isExistData() -> Bool {
         return true
     }
     
-    convenience init(title: String?, startDate: String?, endDate: String?, total: Double?, payed: Double?) {
+    convenience init(tripID: Int?, title: String?, date: String?, location: String?, payedPerson: String? ,payed: Double?) {
         self.init()
+        self.tripID = tripID ?? -1
         self.title = title ?? ""
         self.date = date ?? ""
         self.location = location ?? ""
-        self.total = total ?? 0.0
+        self.payedPerson = payedPerson ?? ""
         self.payed.value = payed ?? 0.0
     }
     
