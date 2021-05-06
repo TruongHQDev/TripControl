@@ -48,11 +48,20 @@ class DestinationAddedViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        txtDestinationName.text = desName
+        //date
+        txtLocation.text = location
+        txtPayed.text = "\(Int(payed))"
+        let i = Int(people.firstIndex(of: personPayed) ?? 0)
+        pkPersonPayed.selectRow(i, inComponent: 0, animated: false)
+    }
+    
     func createDestination() {
         desName = txtDestinationName.text ?? ""
         location = txtLocation.text ?? ""
         let temp = txtPayed.text ?? "0"
-        payed = Double(temp) ?? 0.0
+        payed = Double(temp) ?? 0
         let dateFormat = DateFormatter()
         dateFormat.dateStyle = DateFormatter.Style.short
         dateFormat.timeStyle = DateFormatter.Style.short
@@ -64,6 +73,14 @@ class DestinationAddedViewController: UIViewController {
         RealmService.shared.create(des)
     }
     
+    func update(to destination: Destination) {
+        tripID = destination.tripID
+        desName = "\(destination.title)"
+        //date
+        location = "\(destination.location)"
+        payed = destination.payed.value ?? 0
+        personPayed = destination.payedPerson
+    }
 
 }
 

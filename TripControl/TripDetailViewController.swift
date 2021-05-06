@@ -13,6 +13,7 @@ class TripDetailViewController: UIViewController {
     @IBOutlet weak var vwAddDestination: UIView!
     
     var destinations: [Destination] = []
+    var tripID = -1
     override func viewDidLoad() {
         hideKeyBoardWhenTappedAround()
         super.viewDidLoad()
@@ -26,7 +27,8 @@ class TripDetailViewController: UIViewController {
     @IBAction func addDestinationTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
-        //trip id
+        let item = Destination(tripID: tripID, title: nil, date: nil, location: nil, payedPerson: nil, payed: nil)
+        vc.update(to: item)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -71,6 +73,7 @@ extension TripDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DestinationAddedViewController") as! DestinationAddedViewController
+        vc.update(to: destinations[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
