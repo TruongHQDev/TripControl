@@ -49,6 +49,13 @@ class AddTripViewController: UIViewController {
             people = 1
         }
         
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = DateFormatter.Style.short
+        dateFormat.timeStyle = DateFormatter.Style.short
+        
+        startDate = dateFormat.string(from: pkStartDate.date)
+        endDate = dateFormat.string(from: pkEndDate.date)
+        
         let trip = Trip(title: tripName, startDate: startDate, endDate: endDate, people: people, total: 0, payed: 0)
         let realm = RealmService.shared.realm
         let count = realm.objects(Trip.self).count
@@ -56,21 +63,9 @@ class AddTripViewController: UIViewController {
         RealmService.shared.create(trip)
     }
 
-    @IBAction func valueChange(_ sender: Any) {
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = DateFormatter.Style.short
-        dateFormat.timeStyle = DateFormatter.Style.short
-        
-        startDate = dateFormat.string(from: pkStartDate.date)
-        
+    @IBAction func startDateChange(_ sender: Any) {
     }
     
     @IBAction func endDateChange(_ sender: Any) {
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = DateFormatter.Style.short
-        dateFormat.timeStyle = DateFormatter.Style.short
-        
-        endDate = dateFormat.string(from: pkEndDate.date)
-//        print("date: \(strDate)")
     }
 }
