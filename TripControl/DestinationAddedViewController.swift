@@ -37,6 +37,7 @@ class DestinationAddedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyBoardWhenTappedAround()
         pkPersonPayed.dataSource = self
         pkPersonPayed.delegate = self
     }
@@ -50,12 +51,8 @@ class DestinationAddedViewController: UIViewController {
     func createDestination() {
         desName = txtDestinationName.text ?? ""
         location = txtLocation.text ?? ""
-        if let p = txtPayed.text as? Double? {
-            payed = p ?? 1
-        } else {
-            payed = 1
-        }
-        
+        let temp = txtPayed.text ?? "0"
+        payed = Double(temp) ?? 0.0
         let dateFormat = DateFormatter()
         dateFormat.dateStyle = DateFormatter.Style.short
         dateFormat.timeStyle = DateFormatter.Style.short

@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyBoardWhenTappedAround()
         let realm = RealmService.shared.realm
         let nib = UINib(nibName: "MainTripCell", bundle: nil)
         tableviewTrips.register(nib, forCellReuseIdentifier: "MainTripCell")

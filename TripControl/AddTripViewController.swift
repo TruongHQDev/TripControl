@@ -31,7 +31,7 @@ class AddTripViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hideKeyBoardWhenTappedAround()
     }
     
     @IBAction func saveTapped(_ sender: Any) {

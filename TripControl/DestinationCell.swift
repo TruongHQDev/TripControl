@@ -9,8 +9,9 @@ import UIKit
 
 class DestinationCell: UITableViewCell {
     @IBOutlet weak var titleDestination: UILabel!
-    
     @IBOutlet weak var payedMoney: UILabel!
+    @IBOutlet weak var lbPersonPayed: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +22,12 @@ class DestinationCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         
+    }
+    
+    func setDestination(item: Destination) {
+        titleDestination.text = item.title
+        payedMoney.text = "Payed: \(item.payed.value ?? 0.0)₫"
+        lbPersonPayed.text = "Payed Person: \(item.payedPerson)"
     }
     
 }
